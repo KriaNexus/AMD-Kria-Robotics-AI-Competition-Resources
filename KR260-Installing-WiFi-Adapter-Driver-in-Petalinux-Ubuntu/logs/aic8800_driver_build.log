@@ -1,0 +1,202 @@
+ubuntu@kria:~$ git clone https://github.com/lynxlikenation/aic8800.git
+ubuntu@kria:~$ cd aic8800/drivers/aic8800
+ubuntu@kria:~/aic8800/drivers/aic8800$ vi Makefile
+
+# edit line 48 from "ARCH ?= x86_64" -> "ARCH ?= arm64"
+
+ubuntu@kria:~/aic8800/drivers/aic8800$ make
+make -C /lib/modules/5.15.0-1025-xilinx-zynqmp/build M=/home/ubuntu/aic8800/drivers/aic8800 ARCH=arm64 CROSS_COMPILE= modules
+make[1]: Entering directory '/usr/src/linux-headers-5.15.0-1025-xilinx-zynqmp'
+  CC [M]  /home/ubuntu/aic8800/drivers/aic8800/aic_load_fw/aic_bluetooth_main.o
+  CC [M]  /home/ubuntu/aic8800/drivers/aic8800/aic_load_fw/aicbluetooth.o
+  CC [M]  /home/ubuntu/aic8800/drivers/aic8800/aic_load_fw/aicwf_usb.o
+  CC [M]  /home/ubuntu/aic8800/drivers/aic8800/aic_load_fw/aic_txrxif.o
+  CC [M]  /home/ubuntu/aic8800/drivers/aic8800/aic_load_fw/aicbluetooth_cmds.o
+  CC [M]  /home/ubuntu/aic8800/drivers/aic8800/aic_load_fw/md5.o
+  CC [M]  /home/ubuntu/aic8800/drivers/aic8800/aic_load_fw/aicwf_txq_prealloc.o
+  LD [M]  /home/ubuntu/aic8800/drivers/aic8800/aic_load_fw/aic_load_fw.o
+  CC [M]  /home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/rwnx_msg_tx.o
+/home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/rwnx_msg_tx.c: In function ‘rwnx_send_add_if’:
+/home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/rwnx_msg_tx.c:616:31: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  616 |         add_if_req_param->p2p = true;
+      |         ~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+/home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/rwnx_msg_tx.c:619:5: note: here
+  619 |     case NL80211_IFTYPE_STATION:
+      |     ^~~~
+/home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/rwnx_msg_tx.c:629:31: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  629 |         add_if_req_param->p2p = true;
+      |         ~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+/home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/rwnx_msg_tx.c:632:5: note: here
+  632 |     case NL80211_IFTYPE_AP:
+      |     ^~~~
+  CC [M]  /home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/rwnx_msg_rx.o
+  CC [M]  /home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/rwnx_utils.o
+  CC [M]  /home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/rwnx_cmds.o
+  CC [M]  /home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/rwnx_irqs.o
+  CC [M]  /home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/rwnx_cfgfile.o
+  CC [M]  /home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/rwnx_strs.o
+  CC [M]  /home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/rwnx_rx.o
+  CC [M]  /home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/rwnx_tx.o
+/home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/rwnx_tx.c: In function ‘rwnx_select_txq’:
+/home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/rwnx_tx.c:323:18: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  323 |         rwnx_vif = rwnx_vif->ap_vlan.master;
+      |         ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/rwnx_tx.c:324:5: note: here
+  324 |     case NL80211_IFTYPE_AP:
+      |     ^~~~
+  CC [M]  /home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/rwnx_txq.o
+/home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/rwnx_txq.c: In function ‘rwnx_txq_vif_for_each_sta’:
+/home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/rwnx_txq.c:639:18: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  639 |         rwnx_vif = rwnx_vif->ap_vlan.master;
+      |         ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/rwnx_txq.c:640:5: note: here
+  640 |     case NL80211_IFTYPE_AP:
+      |     ^~~~
+  CC [M]  /home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/rwnx_main.o
+/home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/rwnx_main.c: In function ‘rwnx_cfg80211_mgmt_tx’:
+/home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/rwnx_main.c:5204:22: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ 5204 |             rwnx_vif = rwnx_vif->ap_vlan.master;
+      |             ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/rwnx_main.c:5205:9: note: here
+ 5205 |         case NL80211_IFTYPE_AP:
+      |         ^~~~
+/home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/rwnx_main.c: In function ‘rwnx_fill_station_info’:
+/home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/rwnx_main.c:5862:43: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ 5862 |                 sinfo->rxrate.he_ru_alloc = rx_vect1->he.ru_size;
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/rwnx_main.c:5863:9: note: here
+ 5863 |         case FORMATMOD_HE_SU:
+      |         ^~~~
+/home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/rwnx_main.c: In function ‘rwnx_cfg80211_change_iface’:
+/home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/rwnx_main.c:3237:28: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ 3237 |         vif->ap.generation = 0;
+      |         ~~~~~~~~~~~~~~~~~~~^~~
+/home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/rwnx_main.c:3239:5: note: here
+ 3239 |     case NL80211_IFTYPE_AP:
+      |     ^~~~
+/home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/rwnx_main.c: In function ‘rwnx_interface_add’:
+/home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/rwnx_main.c:2797:30: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ 2797 |         vif->ap.next_mesh_pm = NL80211_MESH_POWER_ACTIVE;
+      |         ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/rwnx_main.c:2799:5: note: here
+ 2799 |     case NL80211_IFTYPE_AP:
+      |     ^~~~
+  CC [M]  /home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/rwnx_mod_params.o
+  CC [M]  /home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/rwnx_mesh.o
+  CC [M]  /home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/rwnx_platform.o
+  CC [M]  /home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/rwnx_pci.o
+  CC [M]  /home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/rwnx_dini.o
+  CC [M]  /home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/rwnx_v7.o
+  CC [M]  /home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/ipc_host.o
+  CC [M]  /home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/rwnx_tdls.o
+In file included from ./include/linux/export.h:45,
+                 from ./include/linux/linkage.h:7,
+                 from ./include/linux/kernel.h:8,
+                 from ./include/linux/interrupt.h:6,
+                 from /home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/rwnx_defs.h:16,
+                 from /home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/rwnx_tdls.h:16,
+                 from /home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/rwnx_tdls.c:16:
+/home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/rwnx_tdls.c: In function ‘rwnx_ac_from_wmm’:
+./include/linux/compiler.h:78:25: warning: this statement may fall through [-Wimplicit-fallthrough=]
+   78 | # define unlikely(x)    __builtin_expect(!!(x), 0)
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+./include/asm-generic/bug.h:108:9: note: in expansion of macro ‘unlikely’
+  108 |         unlikely(__ret_warn_on);                                \
+      |         ^~~~~~~~
+/home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/rwnx_tdls.c:265:17: note: in expansion of macro ‘WARN_ON_ONCE’
+  265 |                 WARN_ON_ONCE(1);
+      |                 ^~~~~~~~~~~~
+/home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/rwnx_tdls.c:266:9: note: here
+  266 |         case 0:
+      |         ^~~~
+  CC [M]  /home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/regdb.o
+  CC [M]  /home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/md5.o
+  CC [M]  /home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/aicwf_compat_8800dc.o
+  CC [M]  /home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/rwnx_radar.o
+  CC [M]  /home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/rwnx_debugfs.o
+  CC [M]  /home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/rwnx_fw_trace.o
+  CC [M]  /home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/rwnx_testmode.o
+  CC [M]  /home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/usb_host.o
+  CC [M]  /home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/aicwf_txrxif.o
+  CC [M]  /home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/aicwf_usb.o
+  LD [M]  /home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/aic8800_fdrv.o
+  MODPOST /home/ubuntu/aic8800/drivers/aic8800/Module.symvers
+  CC [M]  /home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/aic8800_fdrv.mod.o
+  LD [M]  /home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/aic8800_fdrv.ko
+  BTF [M] /home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/aic8800_fdrv.ko
+Skipping BTF generation for /home/ubuntu/aic8800/drivers/aic8800/aic8800_fdrv/aic8800_fdrv.ko due to unavailability of vmlinux
+  CC [M]  /home/ubuntu/aic8800/drivers/aic8800/aic_load_fw/aic_load_fw.mod.o
+  LD [M]  /home/ubuntu/aic8800/drivers/aic8800/aic_load_fw/aic_load_fw.ko
+  BTF [M] /home/ubuntu/aic8800/drivers/aic8800/aic_load_fw/aic_load_fw.ko
+Skipping BTF generation for /home/ubuntu/aic8800/drivers/aic8800/aic_load_fw/aic_load_fw.ko due to unavailability of vmlinux
+make[1]: Leaving directory '/usr/src/linux-headers-5.15.0-1025-xilinx-zynqmp'
+
+ubuntu@kria:~/aic8800/drivers/aic8800$ sudo su
+[sudo] password for ubuntu: 
+root@kria:/home/ubuntu/aic8800/drivers/aic8800# modprobe cfg80211
+root@kria:/home/ubuntu/aic8800/drivers/aic8800# insmod aic_load_fw/aic_load_fw.ko
+root@kria:/home/ubuntu/aic8800/drivers/aic8800# insmod aic8800_fdrv/aic8800_fdrv.ko 
+root@kria:/home/ubuntu/aic8800/drivers/aic8800# dmesg | tail
+[ 1118.318601] ** unsafe for production use.                           **
+[ 1118.318603] **                                                      **
+[ 1118.318606] ** If you see this message and you are not debugging    **
+[ 1118.318608] ** the kernel, report this immediately to your vendor!  **
+[ 1118.318611] **                                                      **
+[ 1118.318613] **   NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE   **
+[ 1118.318616] **********************************************************
+[ 1118.322891] AICWFDBG(LOGINFO)	rwnx v6.4.3.0 - 1a4b0054d2M (master)
+[ 1118.322901] AICWFDBG(LOGINFO)	RELEASE DATE:2023_0207_1052 
+[ 1118.323071] usbcore: registered new interface driver aic8800_fdrv
+root@kria:/home/ubuntu/aic8800/drivers/aic8800# lsmod
+Module                  Size  Used by
+aic8800_fdrv          450560  0
+aic_load_fw            57344  1 aic8800_fdrv
+cfg80211              913408  1 aic8800_fdrv
+binfmt_misc            24576  1
+tpm_tis_spi            20480  0
+ina260_adc             20480  0
+mali                  282624  5
+uio_pdrv_genirq        20480  0
+sch_fq_codel           28672  5
+dm_multipath           45056  0
+scsi_dh_rdac           24576  0
+scsi_dh_emc            16384  0
+scsi_dh_alua           28672  0
+usb5744                16384  0
+dmaproxy               20480  0
+efi_pstore             16384  0
+ip_tables              36864  0
+x_tables               57344  1 ip_tables
+autofs4                53248  2
+raid10                 73728  0
+raid456               196608  0
+async_raid6_recov      20480  1 raid456
+async_memcpy           20480  1 raid456
+async_pq               20480  1 raid456
+async_xor              20480  2 async_pq,raid456
+async_tx               20480  5 async_pq,async_memcpy,async_xor,raid456,async_raid6_recov
+raid1                  57344  0
+raid0                  24576  0
+multipath              24576  0
+linear                 20480  0
+da9121_regulator       24576  0
+i2c_mux_pca954x        16384  0
+crct10dif_ce           20480  1
+rtc_zynqmp             16384  1
+spi_zynqmp_gqspi       24576  0
+i2c_cadence            24576  0
+zynqmp_dpsub           57344  0
+aes_neon_bs            32768  0
+aes_neon_blk           32768  1 aes_neon_bs
+aes_ce_blk             36864  0
+crypto_simd            24576  3 aes_neon_bs,aes_ce_blk,aes_neon_blk
+cryptd                 28672  1 crypto_simd
+aes_ce_cipher          20480  1 aes_ce_blk
+root@kria:/home/ubuntu/aic8800/drivers/aic8800# 
+
+
+
+
+
+
+
