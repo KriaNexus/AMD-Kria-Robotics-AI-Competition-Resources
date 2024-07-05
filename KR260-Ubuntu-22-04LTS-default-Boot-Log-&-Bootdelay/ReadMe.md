@@ -1,5 +1,5 @@
 
-## The main delay is created in following section ->
+## The main delay is created in following section:
 ```
 [   15.597355] systemd-journald[589]: Received client request to flush runtime journal.
 [   15.614682] alua: device handler registered
@@ -15,7 +15,7 @@ kria login:
 ```
 
 Here is also a screenshot of the delay while booting:
-![booting-delay-happens](https://github.com/logictronixinc/amd-kria-robotics-ai-competition-resources/blob/main/KR260-Ubuntu-22-04LTS-default-Boot-Log-&-Bootdelay/Screenshot from 2024-05-13 17-05-27.png
+![booting-delay-happens](https://github.com/logictronixinc/amd-kria-robotics-ai-competition-resources/blob/main/KR260-Ubuntu-22-04LTS-default-Boot-Log-&-Bootdelay/SS0513.png)
 
 ## Sometime you may get following error to:
 
@@ -28,5 +28,5 @@ Here is also a screenshot of the delay while booting:
 
 # Additional Note
 
-** Connecting ethernet or not while booting is not impacting the boot time **
-** For making boot faster , the boot sequence has to be undestand and some apps needs to remove from Ubuntu **
+**Connecting ethernet or not while booting is not impacting the boot time**
+*For making boot faster , the boot sequence has to be undestand and some apps needs to remove from Ubuntu!*
