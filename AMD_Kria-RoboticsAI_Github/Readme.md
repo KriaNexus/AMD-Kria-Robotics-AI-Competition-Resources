@@ -24,11 +24,11 @@ ubuntu@kria:~$
 
 
 ## Directory hierarchy
-├── 1-KR260-PYNQ-DPU_Home-Kria-RoboticsAI.png							=> Screenshot of Jupyter notebook home with DPU based notebook applications.
-├── 1-KR260-PYNQ-DPU_KR260-Ubuntu-22-04-boot_log-v5-after-pynq-env-lunched-jupyter.sh	=> Boot log till jupyter notebook launched.
-├── 1-KR260-PYNQ-DPU_Kria-RoboticsAI-Resnet50.png						=> Running Resnet50 Examples
-├── 2-KR260-PYNQ-ROS_KR260-Ubuntu-22-04-boot_log-v8-after-ros-installation.sh		=> Boot log till Ros installation
-├── 2-KR260-PYNQ-ROS_Launch Jupyter Notebook.png						=> Launching PYNQ Jupypter Notebook
-├── 2-KR260-PYNQ-ROS_ROS-turtlesim-launch.png							=> Turtle Sim Launched
+├── 1-KR260-PYNQ-DPU_Home-Kria-RoboticsAI.png							=> Screenshot of Jupyter notebook home with DPU based notebook applications. \
+├── 1-KR260-PYNQ-DPU_KR260-Ubuntu-22-04-boot_log-v5-after-pynq-env-lunched-jupyter.sh	=> Boot log till jupyter notebook launched. \
+├── 1-KR260-PYNQ-DPU_Kria-RoboticsAI-Resnet50.png						=> Running Resnet50 Examples \
+├── 2-KR260-PYNQ-ROS_KR260-Ubuntu-22-04-boot_log-v8-after-ros-installation.sh		=> Boot log till Ros installation \
+├── 2-KR260-PYNQ-ROS_Launch Jupyter Notebook.png						=> Launching PYNQ Jupypter Notebook \
+├── 2-KR260-PYNQ-ROS_ROS-turtlesim-launch.png							=> Turtle Sim Launched \
 └── Readme.md											=> this readme
 
