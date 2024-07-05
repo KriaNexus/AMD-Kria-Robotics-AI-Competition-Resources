@@ -18,7 +18,7 @@ ubuntu@kria:~$
 ```
 
 ## 2. Screenshot while testing turtelsim app
-- Screenshot is  here: 
+
 1. Screenshot: 2-KR260-PYNQ-ROS_ROS-turtlesim-launch
-![2-KR260-PYNQ-ROS_ROS-turtlesim-launch.png](https://github.com/logictronixinc/amd-kria-robotics-ai-competition-resources/AMD_Kria-RoboticsAI_Github/2-KR260-PYNQ-ROS_ROS-turtlesim-launch.png "2-KR260-PYNQ-ROS_ROS-turtlesim-launch")
+![2-KR260-PYNQ-ROS_ROS-turtlesim-launch.png](https://github.com/logictronixinc/amd-kria-robotics-ai-competition-resources/blob/main/AMD_Kria-RoboticsAI_Github/2-KR260-PYNQ-ROS_ROS-turtlesim-launch.png "2-KR260-PYNQ-ROS_ROS-turtlesim-launch")
 
